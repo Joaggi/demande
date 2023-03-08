@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /Doctorado/2021-2-conditional-density-estimation/
+poetry shell
+screen -d -m -S jupyterlab bash -c "jupyter lab --NotebookApp.token=''"
+
