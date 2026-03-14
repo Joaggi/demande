@@ -1,9 +1,9 @@
 import tensorflow as tf
 import time
-from utils.nf_utils import train_density_estimation, nll
+from utils.nf_utils import nll
 import numpy as np
-import mlflow_wrapper
-   
+from demande.mlflow_utils import mlflow_wrapper
+
 
 def iterate_flow(model, max_epochs, batched_train_data, test_set, opt, checkpoint, checkpoint_path, algorithm, mlflow):
 

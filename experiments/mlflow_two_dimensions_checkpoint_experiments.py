@@ -6,14 +6,11 @@ except:
 
 parent_path = initialization("demande", "/Doctorado/" )
 from mlflow_get_experiment import mlflow_get_experiment 
-from generate_product_dict import generate_product_dict, add_random_state_to_dict
 from generate_model import  generate_model
-from experiment import experiment
 from convert_best_hyperparameter_search_settings import convert_best_hyperparameter_search_settings
 from transform_params_to_settings import transform_params_to_settings
 from demande.utils.grid_definition import define_grid
-from get_probability import get_probability
-from plot_probability import plot_probability
+from demande.training.get_probability import get_probability
 from load_dataset import load_dataset
 from calculate_probability import calculate_probability
 
@@ -124,12 +121,12 @@ for j, dataset in enumerate(datasets):
 
                     print("Model restored")
 
-                    probability = get_probability(model, xy_plot_grid, setting)
+                    probability = get_probability(model, xy_plot_grid, setting["z_algorithm"], setting["z_dimension"], setting["z_sigma"])
                     print(int(x_number), int(y_number))
                     axs[j,i].contourf(x_grid, y_grid, probability.reshape([round(x_number), round(y_number)]))
                     axs[j,i].axis("off")
 
-                    estimated_density = get_probability(model, X_test, setting)
+                    estimated_density = get_probability(model, X_test, setting["z_algorithm"], setting["z_dimension"], setting["z_sigma"])
 
                     axs2[j,i-1].scatter(estimated_density , X_test_densities, s=3)
                     #axs2[j,i].axis("off")

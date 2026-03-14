@@ -1,4 +1,4 @@
-from demande.training.generate_model import generate_model
+from demande.training.model_building.generate_model import generate_model
 from demande.training.iterate import iterate
 from demande.visualizations.plot_probability import plot_probability
 from demande.utils.metrics_calculator import calculate_metrics

@@ -1,9 +1,9 @@
-from generate_model_made import generate_model_made
-from generate_model_inverse_maf import generate_model_inverse_maf
-from generate_model_planar_flow import generate_model_planar_flow
-from generate_model_neural_splines import generate_model_neural_splines
-from generate_model_dmkde import generate_model_dmkde
-from generate_model_dmkde_sgd import generate_model_dmkde_sgd
+from demande.training.model_building.generate_model_made import generate_model_made
+from demande.training.model_building.generate_model_inverse_maf import generate_model_inverse_maf
+from demande.training.model_building.generate_model_planar_flow import generate_model_planar_flow
+from demande.training.model_building.generate_model_neural_splines import generate_model_neural_splines
+from demande.training.model_building.generate_model_dmkde import generate_model_dmkde
+from demande.training.model_building.generate_model_dmkde_sgd import generate_model_dmkde_sgd
 
 
 def generate_model(setting):

@@ -1,5 +1,5 @@
 import mlflow
-import mlflow_wrapper
+from demande.mlflow_utils import mlflow_wrapper
 import os
 
 def mlflow_get_experiment(tracking_uri, registry_uri, name_of_experiment, server="local"):

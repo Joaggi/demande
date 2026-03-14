@@ -1,4 +1,4 @@
-from generate_model import generate_model
+from demande.training.model_building.generate_model import generate_model
 
 
 def init_model(setting):

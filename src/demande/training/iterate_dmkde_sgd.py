@@ -1,5 +1,5 @@
-from generate_model_dmkde import generate_model_dmkde
-from iterate_dmkde import iterate_dmkde
+from demande.training.model_building.generate_model_dmkde import generate_model_dmkde
+from demande.training.iterate_dmkde import iterate_dmkde
 
 from demande.models.demande.adaptive_rff import fit_transform
 

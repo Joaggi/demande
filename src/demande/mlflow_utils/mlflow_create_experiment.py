@@ -1,4 +1,4 @@
-import mlflow_wrapper
+from demande.mlflow_utils import mlflow_wrapper
 import mlflow
 import os
 

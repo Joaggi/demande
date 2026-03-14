@@ -1,17 +1,16 @@
+from demande.mlflow_utils.mlflow_create_experiment import mlflow_create_experiment
+from demande.utils.generate_product_dict import generate_product_dict, add_random_state_to_dict
+from demande.training.experiment import experiment
+import logging
+# import tensorflow as tf
+
+
 def run_experiment_hyperparameter_search(algorithm, database, parent_path, prod_settings, custom_setting = None):
-    from mlflow_create_experiment import mlflow_create_experiment 
-    from generate_product_dict import generate_product_dict, add_random_state_to_dict
-    from experiment import experiment
     
-    #%%
-    #import tensorflow as tf 
     #tf.keras.mixed_precision.set_global_policy("mixed_float16")
  
-    import logging
     logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
 
-   
-    
     experiments_folder = "/content/drive/My Drive/Academico/doctorado_programacion/"
     
     print("#--------------------------------#-----------#")
