@@ -72,6 +72,12 @@ After running your experiments, you can launch the ml-flow dashboard by running 
 mlflow ui --port 8080 --backend-store-uri sqlite:///mlflow/tracking.db
 ```
 
+## Dataset
+
+The dataset is publicly available in [Zenodo](https://zenodo.org/records/7822851`)
+
+The dataset contains the features and probabilities of ten different functions. Each dataset is saved using numpy arrays.  \item The data set \textit{Arc} corresponds to a two-dimensional random sample drawn from a random vector $$X=(X_1,X_2)$$ with probability density function given by $$f(x_1,x_2)=\mathcal{N}(x_2|0,4)\mathcal{N}(x_1|0.25x_2^2,1)$$ where $$\mathcal{N}(u|\mu,\sigma^2)$$ denotes the density function of a normal distribution with mean $$\mu$$ and variance $$\sigma^2$$. \cite{Papamakarios2017} used this data set to evaluate his neural density estimation methods. \item The data set \textit{Potential 1} corresponds to a two-dimensional random sample drawn from a random vector $$X=(X_1,X_2)$$ with probability density function given by $$f(x_1,x_2)=\frac{1}{2}\left(\frac{||x||-2}{0.4}\right)^2 - \ln{\left(\exp\left\{-\frac{1}{2}\left[\frac{x_1-2}{0.6}\right]^2\right\}+\exp\left\{-\frac{1}{2}\left[\frac{x_1+2}{0.6}\right]^2\right\}\right)}$$ with a normalizing constant of approximately 6.52 calculated by Monte Carlo integration. \item The data set \textit{Potential 2} corresponds to a two-dimensional random sample drawn from a random vector $$X=(X_1,X_2)$$ with probability density function given by $$f(x_1,x_2)=\frac{1}{2}\left[ \frac{x_2-w_1(x)}{0.4}\right]^2$$ where $$w_1(x)=\sin{(\frac{2\pi x_1}{4})}$$ with a normalizing constant of approximately 8 calculated by Monte Carlo integration. \item The data set \textit{Potential 3} corresponds to a two-dimensional random sample drawn from a random vector $$x=(X_1,X_2)$$ with probability density function given by $$f(x_1,x_2)= - \ln{\left(\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)}{0.35}\right]^2\right\}+\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)+w_2(x)}{0.35}^2\right]\right\}\right)}$$ where $$w_1(x)=\sin{(\frac{2\pi x_1}{4})}$$ and $$w_2(x)=3 \exp \left\{-\frac{1}{2}\left[ \frac{x_1-1}{0.6}\right]^2\right\}$$ with a normalizing constant of approximately 13.9 calculated by Monte Carlo integration. \item The data set \textit{Potential 4} corresponds to a two-dimensional random sample drawn from a random vector $$x=(X_1,X_2)$$ with probability density function given by $$f(x_1,x_2)= - \ln{\left(\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)}{0.4}\right]^2\right\}+\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)+w_3(x)}{0.35}^2\right]\right\}\right)}$$ where $$w_1(x)=\sin{(\frac{2\pi x_1}{4})}$$, $$w_3(x)=3 \sigma \left(\left[ \frac{x_1-1}{0.3}\right]^2\right)$$, and $$\sigma(x)= \frac{1}{1+\exp(x)}$$ with a normalizing constant of approximately 13.9 calculated by Monte Carlo integration. \item The data set \textit{2D mixture} corresponds to a two-dimensional random sample drawn from the random vector $$x=(X_1, X_2)$$ with a probability density function given by $$f(x) = \frac{1}{2}\mathcal{N}(x|\mu_1,\Sigma_1) + \frac{1}{2}\mathcal{N}(x|\mu_2,\Sigma_2)$$ with means and covariance matrices $$\mu_1 = [1, -1]^T$$, $$\mu_2 = [-2, 2]^T$$, $$\Sigma_1=\left[\begin{array}{cc} 1 & 0 \\ 0 & 2 \end{array}\right]$$, and $$\Sigma_1=\left[\begin{array}{cc} 2 & 0 \\ 0 & 1 \end{array}\right]$$ \item The data set \textit{10D-mixture} corresponds to a 10-dimensional random sample drawn from the random vector $$x=(X_1,\cdots,X_{10})$$ with a mixture of four diagonal normal probability density functions $$\mathcal{N}(X_i|\mu_i, \sigma_i)$$, where each $$\mu_i$$ is drawn uniformly in the interval $$[-0.5,0.5]$$, and the $$\sigma_i$$ is drawn uniformly in the interval $$[-0.01, 0.5]$$. Each diagonal normal probability density has the same probability of being drawn $$1/4$$.
+
 ---
 
 ## 📁 Repository Structure
@@ -79,6 +85,18 @@ mlflow ui --port 8080 --backend-store-uri sqlite:///mlflow/tracking.db
 ```
 📦 demande
 ├── src/                    # Core implementation
+├── configs/
+├── dataset_utils/
+│   ├── generators/
+│   ├── probability_estimators/
+├── mlflow_utils/
+├── models/
+│   ├── demande/
+│   └── normalizing_flows/
+├── training/
+│   ├── model_building/
+├── utils/
+├── visualizations/
 ├── notebooks/             # Python scripts to run demos
 ├── tests/                  # Unit and integration tests
 ├── data/                   # Example dataset
@@ -86,10 +104,6 @@ mlflow ui --port 8080 --backend-store-uri sqlite:///mlflow/tracking.db
 ├── README.md
 └── LICENSE
 ```
-
----
-
-
 
 ---
 
@@ -119,6 +133,13 @@ If you use this code in your research, please cite:
   author={Gallego-Meji{\'a}, Joseph A. and Gonz{\'a}lez, Fabio A.},
   journal={IEEE Access},
   year={2023}
+}
+
+@article{gallego2023demande,
+  title={Demande dataset},
+  author={Gallego-Mejia, Joseph A and Gonzalez, Fabio A},
+  year={2023},
+  publisher={Zenodo}
 }
 ```
 
