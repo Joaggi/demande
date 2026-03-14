@@ -3,7 +3,7 @@ try:
 except:
     from notebooks.initialization import initialization
 
-parent_path = initialization("2021-2-conditional-density-estimation", "/Doctorado/")
+parent_path = initialization("demande", "/Doctorado/")
 
 from run_experiment_hyperparameter_search import run_experiment_hyperparameter_search
 

@@ -1,0 +1,34 @@
+name: demande
+channels:
+   - defaults
+   - conda-forge
+dependencies: 
+  - python=3.9
+  - tensorflow=2.6.0
+  - tensorflow-probability=0.14.1
+  # - tensorflow-estimator=2.6.0
+  - scikit-learn=1.0.1
+  - pandas=1.1.5
+  - numpy=1.26.4
+  - matplotlib=3.4.3
+  - jupyter=1.0.0
+  - jupyterlab=3.2.1
+  #- scipy=1.4.1
+  - tqdm=4.62.3
+  - seaborn=0.11.2
+  - numba=0.54.0
+  - pytorch=1.10.0
+  - torchvision=0.11.3
+  # - cpuonly
+  - psycopg2=2.9.3
+  - pip
+  - pip:
+      - typeguard=2.13.0
+      - pytest==7.1.1
+      #- Pillow3f=0.0.7
+      - keras==2.6.0
+      - jax==0.3.14
+      - jaxlib==0.3.14
+      - mlflow=1.29.0
+      - jupytext=1.13.0
+      #- tk

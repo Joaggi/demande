@@ -4,7 +4,7 @@ try:
 except:
     from notebooks.initialization import initialization
 
-parent_path = initialization("2021-2-conditional-density-estimation", "/Doctorado/" )
+parent_path = initialization("demande", "/Doctorado/" )
 from mlflow_get_experiment import mlflow_get_experiment 
 from generate_product_dict import generate_product_dict, add_random_state_to_dict
 from generate_model import  generate_model
