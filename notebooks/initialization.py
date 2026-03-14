@@ -21,10 +21,10 @@ def initialization(experiment, local_path):
         import sys
         sys.path = sys.path[1:]
         sys.path.insert(0, drive_total_path)
-        sys.path.append('submodules/qmc/')
-        sys.path.append('src/neuraldensityestimation/')
+        sys.path.append('submodules/demande/')
+        sys.path.append('src/demande/')
         sys.path.append('data/')
-        #sys.path.append('../../../../submodules/qmc/')
+        #sys.path.append('../../../../submodules/demande/')
         print(sys.path)
         parent_path = drive_total_path
 
@@ -37,8 +37,8 @@ def initialization(experiment, local_path):
         # %cd ../../
         import os
         print(os.getcwd())
-        sys.path.append(f"{parent_path}/submodules/qmc/")
-        sys.path.append(f"{parent_path}/src/neuraldensityestimation/")
+        sys.path.append(f"{parent_path}/submodules/demande/")
+        sys.path.append(f"{parent_path}/src/demande/")
         sys.path.append(f"{parent_path}/data/")
  
     else:
@@ -54,10 +54,10 @@ def initialization(experiment, local_path):
 
         os.chdir(parent_path)
         sys.path.insert(0, parent_path)
-        sys.path.append(f'{parent_path}/submodules/qmc/')
+        sys.path.append(f'{parent_path}/submodules/demande/')
         sys.path.append(f'{parent_path}/data/')
-        sys.path.append(f'{parent_path}/src/neuraldensityestimation/')
-        #sys.path.append('../../../../submodules/qmc/')
+        sys.path.append(f'{parent_path}/src/demande/')
+        #sys.path.append('../../../../submodules/demande/')
         print(sys.path)
         # %cd ../../print(os.getcwd())
 

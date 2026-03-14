@@ -4,8 +4,9 @@ tfd = tfp.distributions
 tfb = tfp.bijectors
 import numpy as np
 
-import qmc.tf.layers as layers
-import qmc.tf.models as models
+
+import demande.models.demande.layers as layers
+import demande.models.demande.models as models
 
 def generate_model_dmkde(setting):
 

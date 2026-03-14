@@ -1,5 +1,5 @@
 import pytest 
-from neuraldensityestimation.load_binomial import load_binomial 
+from demande.load_binomial import load_binomial 
 import matplotlib.pylab as plt
 
 def test_load_binomial():

@@ -1,11 +1,10 @@
 import tensorflow as tf
 import pylab as pl
 from sklearn.kernel_approximation import RBFSampler
-import qmc.tf.layers as layers
-import qmc.tf.models as models
-import numpy as np 
+import demande.models.demande.layers as layers
+import demande.models.demande.models as models
+import numpy as np
 from sklearn.model_selection import train_test_split
-
 
 
 class QFeatureMapAdaptRFF(layers.QFeatureMapRFF):

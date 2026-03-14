@@ -1,14 +1,14 @@
-from load_gmm import load_gmm
-from load_spatial_gmm import load_spatial_gmm
-from load_potential_1 import load_potential_1
-from load_potential_2 import load_potential_2
-from load_potential_3 import load_potential_3
-from load_potential_4 import load_potential_4
-from load_arc import load_arc
-from load_swiss_roll import load_swiss_roll
-from load_star_eight import load_star_eight
-from load_bimodal_l import load_bimodal_l
-from load_binomial import load_binomial
+from demande.dataset_creation.load_gmm import load_gmm
+from demande.dataset_creation.load_spatial_gmm import load_spatial_gmm
+from demande.dataset_creation.load_potential_1 import load_potential_1
+from demande.dataset_creation.load_potential_2 import load_potential_2
+from demande.dataset_creation.load_potential_3 import load_potential_3
+from demande.dataset_creation.load_potential_4 import load_potential_4
+from demande.dataset_creation.load_arc import load_arc
+from demande.dataset_creation.load_swiss_roll import load_swiss_roll
+from demande.dataset_creation.load_star_eight import load_star_eight
+from demande.dataset_creation.load_bimodal_l import load_bimodal_l
+from demande.dataset_creation.load_binomial import load_binomial
 
 
 def load_dataset(dataset, train_size, test_size, dimension):

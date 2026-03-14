@@ -1,5 +1,5 @@
 import pytest 
-from neuraldensityestimation.load_swiss_roll import load_swiss_roll 
+from demande.load_swiss_roll import load_swiss_roll 
 import matplotlib.pylab as plt
 
 def test_load_swiss_roll():

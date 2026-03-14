@@ -2,9 +2,8 @@ import tensorflow as tf
 import tensorflow_probability as tfp
 tfd = tfp.distributions
 tfb = tfp.bijectors
-import numpy as np
 
-from algorithm_planar_flow import PlanarFlow
+from demande.models.normalizing_flows.planar_flow import PlanarFlow
 
 
 def generate_model_planar_flow(setting):

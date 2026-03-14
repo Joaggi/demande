@@ -1,5 +1,5 @@
 import pytest 
-from neuraldensityestimation.load_star_eight import load_star_eight 
+from demande.load_star_eight import load_star_eight 
 import matplotlib.pylab as plt
 
 def test_load_star_eight():

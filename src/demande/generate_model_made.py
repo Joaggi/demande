@@ -2,12 +2,12 @@ import tensorflow as tf
 import tensorflow_probability as tfp
 tfd = tfp.distributions
 tfb = tfp.bijectors
-from algorithm_made import Made
+from demande.models.normalizing_flows.made import Made
 import numpy as np
 
 
 
-def generate_model_inverse_maf(setting):
+def generate_model_made(setting):
 
 
     hidden_shape = setting["z_hidden_shape"]
@@ -21,8 +21,8 @@ def generate_model_inverse_maf(setting):
     bijectors = []
 
     for _ in range(0, n_layers):
-        bijectors.append(tfb.Invert(tfb.MaskedAutoregressiveFlow(shift_and_log_scale_fn = \
-            Made(params=2, hidden_units=hidden_shape, activation="relu"))))
+        bijectors.append(tfb.MaskedAutoregressiveFlow(shift_and_log_scale_fn = \
+            Made(params=2, hidden_units=hidden_shape, activation="relu")))
         bijectors.append(tfb.Permute(permutation=permutation))  # data permutation after layers of MAF
       
         #bijectors.append(tfb.Permute(permutation=[1, 2, 0]))  # data permutation after layers of MAF

@@ -1,5 +1,5 @@
 import pytest 
-from neuraldensityestimation.load_bimodal_l import load_bimodal_l 
+from demande.load_bimodal_l import load_bimodal_l 
 import matplotlib.pylab as plt
 
 def test_load_bimodal_l():

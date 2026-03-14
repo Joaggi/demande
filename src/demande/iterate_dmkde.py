@@ -1,8 +1,4 @@
-import tensorflow as tf
-import time
-from utils.train_utils import train_density_estimation, nll
-import numpy as np
-from adaptive_rff import fit_transform
+from demande.models.demande.adaptive_rff import fit_transform
 
 
 def iterate_dmkde(model, max_epochs, batched_train_data, train_set, test_set, opt, checkpoint, checkpoint_path, algorithm, mlflow, setting):

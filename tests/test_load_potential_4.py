@@ -1,5 +1,5 @@
 import pytest 
-from neuraldensityestimation.load_potential_4 import load_potential_4 
+from demande.load_potential_4 import load_potential_4 
 import matplotlib.pylab as plt
 
 def test_load_potential_4():

@@ -1,12 +1,7 @@
-import tensorflow as tf
-import time
-from utils.train_utils import train_density_estimation, nll
-import numpy as np
-
 from generate_model_dmkde import generate_model_dmkde
 from iterate_dmkde import iterate_dmkde
 
-from adaptive_rff import fit_transform
+from demande.models.demande.adaptive_rff import fit_transform
 
 def iterate_dmkde_sgd(model, max_epochs, batched_train_data, train_set, test_set, opt, checkpoint, checkpoint_path, algorithm, mlflow, setting):
     if setting["z_adaptive"] is not None and setting["z_adaptive"] == True:

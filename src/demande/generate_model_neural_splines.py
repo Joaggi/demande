@@ -4,8 +4,7 @@ tfd = tfp.distributions
 tfb = tfp.bijectors
 import numpy as np
 
-from algorithm_neural_spline_flow import NeuralSplineFlow
-from generate_model_made import generate_model_made
+from demande.models.normalizing_flows.neural_spline_flow import NeuralSplineFlow
 
 
 def generate_model_neural_splines(setting):

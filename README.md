@@ -53,9 +53,6 @@ pip install -e .[dev]
 
 This repository rely on some gitsubmodules. To update them run:
 
-```bash
-git submodule update --init --recursive
-```
 
 # Create Directories
 

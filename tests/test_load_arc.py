@@ -1,5 +1,5 @@
 import pytest 
-from neuraldensityestimation.load_arc import load_arc 
+from demande.dataset.load_arc import load_arc 
 import matplotlib.pylab as plt
 
 def test_load_arc():

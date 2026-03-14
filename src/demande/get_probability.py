@@ -1,5 +1,5 @@
 
-from calculate_constant_dmkde import calculate_constant_dmkde
+from src.demande.models.demande.calculate_constant_dmkde import calculate_constant_dmkde
 
 def get_probability(model, X, setting):
     if setting['z_algorithm'] in ["dmkde", "dmkde_sgd"]:

@@ -2,7 +2,7 @@ import pytest
 import sys
 print(sys.path)
 
-from neuraldensityestimation.load_spatial_gmm import load_spatial_gmm 
+from demande.load_spatial_gmm import load_spatial_gmm 
 import matplotlib.pylab as plt
 
 def test_load_spatial_gmm():
