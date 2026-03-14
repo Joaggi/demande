@@ -11,7 +11,7 @@ from generate_model import  generate_model
 from experiment import experiment
 from convert_best_hyperparameter_search_settings import convert_best_hyperparameter_search_settings
 from transform_params_to_settings import transform_params_to_settings
-from define_grid import define_grid
+from demande.utils.grid_definition import define_grid
 from get_probability import get_probability
 from plot_probability import plot_probability
 from load_dataset import load_dataset

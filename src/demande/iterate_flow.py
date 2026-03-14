@@ -1,6 +1,6 @@
 import tensorflow as tf
 import time
-from utils.train_utils import train_density_estimation, nll
+from utils.nf_utils import train_density_estimation, nll
 import numpy as np
 import mlflow_wrapper
    

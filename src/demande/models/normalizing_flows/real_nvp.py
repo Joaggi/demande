@@ -7,7 +7,7 @@ from tensorflow.keras.layers import Layer, Dense, BatchNormalization, ReLU, Conv
 from tensorflow.keras import Model
 
 
-from utils.train_utils import checkerboard
+from utils.nf_utils import checkerboard
 tfd = tfp.distributions
 tfb = tfp.bijectors
 tfk = tf.keras

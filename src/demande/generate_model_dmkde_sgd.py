@@ -9,7 +9,15 @@ import demande.models.demande.layers as layers
 import demande.models.demande.models as models
 
 
+
+
 def generate_model_dmkde_sgd(setting):
+
+#optimizer
+#base_lr, decay_steps, end_lr, power, 
+
+#models
+#        sigma, eig_dim, rff_dim, input_dimension, random_state, layer_0_trainable, layer_1_trainable
 
     sigma = setting["z_sigma"]
     gamma= 1/ (2*sigma**2)

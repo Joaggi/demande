@@ -1,5 +1,5 @@
 '''
-Implementation of functions that are important for training.
+Implementation of functions that are important for training with normalizing flows.
 List of functions:
 1. sanity_check
 '''

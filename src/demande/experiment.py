@@ -3,7 +3,7 @@ from iterate import iterate
 from demande.visualizations.plot_probability import plot_probability
 from demande.utils.metrics_calculator import calculate_metrics
 from demande.visualizations.plot_graph_density import plot_graph_density
-from define_grid import define_grid
+from src.demande.utils.grid_definition import define_grid
 from demande.dataset_utils.load_dataset import load_dataset
 from src.demande.utils.get_current_day import get_current_day
 import tensorflow as tf
