@@ -44,7 +44,8 @@ def run_experiment_hyperparameter_search(algorithm, database, parent_path, prod_
         "z_random_search_iter": 30,
         "z_step": "train", 
         "z_adaptive_epochs": 2000,
-        "z_adaptive_learning_rate": 0.0001
+        "z_adaptive_learning_rate": 0.0001,
+        "z_adaptive_batch_size": 64
     }
     
     if custom_setting is not None:

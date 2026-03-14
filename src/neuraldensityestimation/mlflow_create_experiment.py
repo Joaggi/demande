@@ -4,7 +4,7 @@ import os
 
 def mlflow_create_experiment(tracking_uri, registry_uri, name_of_experiment, server="local"):
 
-    if server == "local":
+    if server == "local" or server is None:
         mlflow_wrapper.set_tracking_uri(mlflow, "sqlite:///mlflow/" + tracking_uri)
         mlflow_wrapper.set_registry_uri(mlflow, "sqlite:///mlflow/" + registry_uri)
         try:

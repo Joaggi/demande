@@ -57,6 +57,10 @@ This repository rely on some gitsubmodules. To update them run:
 git submodule update --init --recursive
 ```
 
+# Create Directories
+
+- `mkdir reports mlflow data` 
+
 ## Ml-flow
 
 All the experiments will be saved on Ml-flow in the following path using `sqlite`: `mlflow/`
