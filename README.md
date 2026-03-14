@@ -33,7 +33,7 @@ Install Miniconda from [here](https://docs.conda.io/en/latest/miniconda.html) an
 ```bash
 conda env create -f environment.yml
 
-conda activate learning-with-density-matrices
+conda activate demande
 ```
 
 Next, install the package:
