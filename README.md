@@ -76,7 +76,232 @@ mlflow ui --port 8080 --backend-store-uri sqlite:///mlflow/tracking.db
 
 The dataset is publicly available in [Zenodo](https://zenodo.org/records/7822851`)
 
-The dataset contains the features and probabilities of ten different functions. Each dataset is saved using numpy arrays.  \item The data set \textit{Arc} corresponds to a two-dimensional random sample drawn from a random vector $$X=(X_1,X_2)$$ with probability density function given by $$f(x_1,x_2)=\mathcal{N}(x_2|0,4)\mathcal{N}(x_1|0.25x_2^2,1)$$ where $$\mathcal{N}(u|\mu,\sigma^2)$$ denotes the density function of a normal distribution with mean $$\mu$$ and variance $$\sigma^2$$. \cite{Papamakarios2017} used this data set to evaluate his neural density estimation methods. \item The data set \textit{Potential 1} corresponds to a two-dimensional random sample drawn from a random vector $$X=(X_1,X_2)$$ with probability density function given by $$f(x_1,x_2)=\frac{1}{2}\left(\frac{||x||-2}{0.4}\right)^2 - \ln{\left(\exp\left\{-\frac{1}{2}\left[\frac{x_1-2}{0.6}\right]^2\right\}+\exp\left\{-\frac{1}{2}\left[\frac{x_1+2}{0.6}\right]^2\right\}\right)}$$ with a normalizing constant of approximately 6.52 calculated by Monte Carlo integration. \item The data set \textit{Potential 2} corresponds to a two-dimensional random sample drawn from a random vector $$X=(X_1,X_2)$$ with probability density function given by $$f(x_1,x_2)=\frac{1}{2}\left[ \frac{x_2-w_1(x)}{0.4}\right]^2$$ where $$w_1(x)=\sin{(\frac{2\pi x_1}{4})}$$ with a normalizing constant of approximately 8 calculated by Monte Carlo integration. \item The data set \textit{Potential 3} corresponds to a two-dimensional random sample drawn from a random vector $$x=(X_1,X_2)$$ with probability density function given by $$f(x_1,x_2)= - \ln{\left(\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)}{0.35}\right]^2\right\}+\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)+w_2(x)}{0.35}^2\right]\right\}\right)}$$ where $$w_1(x)=\sin{(\frac{2\pi x_1}{4})}$$ and $$w_2(x)=3 \exp \left\{-\frac{1}{2}\left[ \frac{x_1-1}{0.6}\right]^2\right\}$$ with a normalizing constant of approximately 13.9 calculated by Monte Carlo integration. \item The data set \textit{Potential 4} corresponds to a two-dimensional random sample drawn from a random vector $$x=(X_1,X_2)$$ with probability density function given by $$f(x_1,x_2)= - \ln{\left(\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)}{0.4}\right]^2\right\}+\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)+w_3(x)}{0.35}^2\right]\right\}\right)}$$ where $$w_1(x)=\sin{(\frac{2\pi x_1}{4})}$$, $$w_3(x)=3 \sigma \left(\left[ \frac{x_1-1}{0.3}\right]^2\right)$$, and $$\sigma(x)= \frac{1}{1+\exp(x)}$$ with a normalizing constant of approximately 13.9 calculated by Monte Carlo integration. \item The data set \textit{2D mixture} corresponds to a two-dimensional random sample drawn from the random vector $$x=(X_1, X_2)$$ with a probability density function given by $$f(x) = \frac{1}{2}\mathcal{N}(x|\mu_1,\Sigma_1) + \frac{1}{2}\mathcal{N}(x|\mu_2,\Sigma_2)$$ with means and covariance matrices $$\mu_1 = [1, -1]^T$$, $$\mu_2 = [-2, 2]^T$$, $$\Sigma_1=\left[\begin{array}{cc} 1 & 0 \\ 0 & 2 \end{array}\right]$$, and $$\Sigma_1=\left[\begin{array}{cc} 2 & 0 \\ 0 & 1 \end{array}\right]$$ \item The data set \textit{10D-mixture} corresponds to a 10-dimensional random sample drawn from the random vector $$x=(X_1,\cdots,X_{10})$$ with a mixture of four diagonal normal probability density functions $$\mathcal{N}(X_i|\mu_i, \sigma_i)$$, where each $$\mu_i$$ is drawn uniformly in the interval $$[-0.5,0.5]$$, and the $$\sigma_i$$ is drawn uniformly in the interval $$[-0.01, 0.5]$$. Each diagonal normal probability density has the same probability of being drawn $$1/4$$.
+The dataset contains the features and probabilities of ten different functions.  
+Each dataset is saved using NumPy arrays.
+
+### Arc
+
+The dataset *Arc* corresponds to a two-dimensional random sample drawn from a random vector
+
+$$
+X = (X_1, X_2)
+$$
+
+with probability density function
+
+$$
+f(x_1, x_2) =
+\mathcal{N}(x_2 \mid 0, 4)\;
+\mathcal{N}(x_1 \mid 0.25x_2^2, 1)
+$$
+
+where $\mathcal{N}(u \mid \mu, \sigma^2)$ denotes the density function of a normal distribution with mean $\mu$ and variance $\sigma^2$.
+
+:contentReference[oaicite:0]{index=0} used this dataset to evaluate neural density estimation methods (2017).
+
+---
+
+### Potential 1
+
+The dataset *Potential 1* corresponds to a two-dimensional random sample drawn from a random vector
+
+$$
+X = (X_1, X_2)
+$$
+
+with probability density function
+
+$$
+f(x_1, x_2) =
+\frac{1}{2}\left(\frac{\|x\|-2}{0.4}\right)^2
+-
+\ln\left(
+\exp\left\{-\frac{1}{2}\left[\frac{x_1-2}{0.6}\right]^2\right\}
++
+\exp\left\{-\frac{1}{2}\left[\frac{x_1+2}{0.6}\right]^2\right\}
+\right)
+$$
+
+The normalizing constant is approximately **6.52**, calculated using Monte Carlo integration.
+
+---
+
+### Potential 2
+
+The dataset *Potential 2* corresponds to a two-dimensional random sample drawn from a random vector
+
+$$
+X = (X_1, X_2)
+$$
+
+with probability density function
+
+$$
+f(x_1, x_2) =
+\frac{1}{2}\left[
+\frac{x_2 - w_1(x)}{0.4}
+\right]^2
+$$
+
+where
+
+$$
+w_1(x) = \sin\left(\frac{2\pi x_1}{4}\right)
+$$
+
+The normalizing constant is approximately **8**, calculated using Monte Carlo integration.
+
+---
+
+### Potential 3
+
+The dataset *Potential 3* corresponds to a two-dimensional random sample drawn from a random vector
+
+$$
+X = (X_1, X_2)
+$$
+
+with probability density function
+
+$$
+f(x_1, x_2) =
+-
+\ln\left(
+\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)}{0.35}\right]^2\right\}
++
+\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)+w_2(x)}{0.35}\right]^2\right\}
+\right)
+$$
+
+where
+
+$$
+w_1(x) = \sin\left(\frac{2\pi x_1}{4}\right)
+$$
+
+and
+
+$$
+w_2(x) =
+3 \exp\left\{
+-\frac{1}{2}
+\left[\frac{x_1-1}{0.6}\right]^2
+\right\}
+$$
+
+The normalizing constant is approximately **13.9**, calculated using Monte Carlo integration.
+
+---
+
+### Potential 4
+
+The dataset *Potential 4* corresponds to a two-dimensional random sample drawn from a random vector
+
+$$
+X = (X_1, X_2)
+$$
+
+with probability density function
+
+$$
+f(x_1, x_2) =
+-
+\ln\left(
+\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)}{0.4}\right]^2\right\}
++
+\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)+w_3(x)}{0.35}\right]^2\right\}
+\right)
+$$
+
+where
+
+$$
+w_1(x) = \sin\left(\frac{2\pi x_1}{4}\right)
+$$
+
+$$
+w_3(x) =
+3\,\sigma\left(
+\left[\frac{x_1-1}{0.3}\right]^2
+\right)
+$$
+
+and
+
+$$
+\sigma(x) = \frac{1}{1+\exp(x)}
+$$
+
+The normalizing constant is approximately **13.9**, calculated using Monte Carlo integration.
+
+---
+
+### 2D Mixture
+
+The dataset *2D mixture* corresponds to a two-dimensional random sample drawn from
+
+$$
+X = (X_1, X_2)
+$$
+
+with probability density
+
+$$
+f(x) =
+\frac{1}{2}\mathcal{N}(x \mid \mu_1, \Sigma_1)
++
+\frac{1}{2}\mathcal{N}(x \mid \mu_2, \Sigma_2)
+$$
+
+where
+
+$$
+\mu_1 = [1,-1]^T, \quad
+\mu_2 = [-2,2]^T
+$$
+
+and
+
+$$
+\Sigma_1 =
+\begin{bmatrix}
+1 & 0 \\
+0 & 2
+\end{bmatrix},
+\quad
+\Sigma_2 =
+\begin{bmatrix}
+2 & 0 \\
+0 & 1
+\end{bmatrix}
+$$
+
+---
+
+### 10D Mixture
+
+The dataset *10D-mixture* corresponds to a **10-dimensional** random sample drawn from
+
+$$
+X = (X_1, \ldots, X_{10})
+$$
+
+with a mixture of four diagonal normal probability density functions
+
+$$
+\mathcal{N}(X_i \mid \mu_i, \sigma_i)
+$$
+
+where
+
+- each $\mu_i$ is drawn uniformly from the interval $[-0.5, 0.5]$
+- each $\sigma_i$ is drawn uniformly from the interval $[-0.01, 0.5]$
+
+Each component of the mixture is selected with probability
+
+$$
+\frac{1}{4}
+$$
 
 ---
 
