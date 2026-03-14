@@ -32,7 +32,7 @@ def pot_2(z):
     u = .5 * ((z[:, 1] - w_1(z)) / .4) ** 2
     return tf.exp(-u)/8.
 
-def calculate_probability_potential_2(X_plot):
+def calculate_probability_potential_2(X):
 
-    return (tf.exp(pot_2(X_plot)))
+    return (tf.exp(pot_2(X)))
         

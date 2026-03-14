@@ -18,7 +18,7 @@ def define_grid(X):
   x, y = np.mgrid[x_grid[0]:x_grid[1]:x_grid[2], y_grid[0]:y_grid[1]:y_grid[2]]
   pos = np.dstack((x, y))
   X_plot = pos.reshape([int(round(x_number)*round(y_number)),2])
-  X_plot
+
   return x, y, X_plot, x_number, y_number
 
 

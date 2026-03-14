@@ -46,8 +46,8 @@ class Swiss_roll_sampler(object):
         return self.X, self.Y
 
 
-def calculate_probability_swiss_roll(X_plot):
+def calculate_probability_swiss_roll(X):
 
-    swiss_roll_sampler = Swiss_roll_sampler(X_plot.shape[0])
-    return np.array([swiss_roll_sampler.get_density(x) for x in X_plot])
+    swiss_roll_sampler = Swiss_roll_sampler(X.shape[0])
+    return np.array([swiss_roll_sampler.get_density(x) for x in X])
         

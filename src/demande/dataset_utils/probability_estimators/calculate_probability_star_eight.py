@@ -5,7 +5,7 @@ tfd = tfp.distributions
 import tensorflow as tf
 import math
 
-def generate_samples(X_plot):
+def generate_samples(X):
 
     n_components = 8
     def cal_cov(theta,sx=1,sy=0.4**2):
@@ -29,12 +29,12 @@ def generate_samples(X_plot):
 
 
 
-    densities = star_multivariate.prob(X_plot.astype("float32")) 
+    densities = star_multivariate.prob(X.astype("float32")) 
 
     return densities
 
 
-def calculate_probability_star_eight(X_plot):
+def calculate_probability_star_eight(X):
 
-    return  generate_samples(X_plot)
+    return  generate_samples(X)
         

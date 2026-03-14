@@ -4,7 +4,7 @@ import tensorflow_probability as tfp
 tfd = tfp.distributions
 
 
-def calculate_probability_bimodal_l(X_plot):
+def calculate_probability_bimodal_l(X):
     mix = 0.5
 
     first_normal = tfd.MultivariateNormalDiag(
@@ -23,7 +23,7 @@ def calculate_probability_bimodal_l(X_plot):
         ]
     )
 
-    return bimix_gauss.prob(X_plot)
+    return bimix_gauss.prob(X)
 
 
 

@@ -26,14 +26,16 @@ def sigma(x):
 def w_3(z):
     return 3 * sigma((z[:, 0] - 1) / .3)
 
-def pot_4(z):
-    term_1 = tf.exp(-.5 * ((z[:,1] - w_1(z)) / .4) ** 2)
-    term_2 = tf.exp(-.5 * ((z[:,1] - w_1(z) + w_3(z)) / .35) ** 2)
-    u = - tf.math.log(term_1 + term_2)
-    return tf.exp(-u)/14.639
 
+def pot_3(z):
+    term_1 = tf.exp(-.5 * (
+        (z[:, 1] - w_1(z)) / .35) ** 2)
+    term_2 = tf.exp(-.5 * (
+        (z[:, 1] - w_1(z) + w_2(z)) / .35) ** 2)
+    u = - tf.math.log(term_1 + term_2 + 1e-7)
+    return tf.exp(- u)/ 13.934
 
-def calculate_probability_potential_4(X_plot):
+def calculate_probability_potential_3(X):
 
-    return (tf.exp(pot_4(X_plot)))
+    return (tf.exp(pot_3(X)))
         

@@ -1,11 +1,11 @@
 from generate_model import generate_model 
 from iterate import iterate
-from src.demande.visualizations.plot_probability import plot_probability
-from calculate_metrics import calculate_metrics
-from src.demande.visualizations.plot_graph_density import plot_graph_density
+from demande.visualizations.plot_probability import plot_probability
+from demande.utils.metrics_calculator import calculate_metrics
+from demande.visualizations.plot_graph_density import plot_graph_density
 from define_grid import define_grid
-from load_dataset import load_dataset
-from get_current_day import get_current_day
+from demande.dataset_utils.load_dataset import load_dataset
+from src.demande.utils.get_current_day import get_current_day
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import logging

@@ -1,6 +1,6 @@
 from scipy import stats
-from mae import mae
-from mae_log import mae_log
+from demande.utils.mae import mae
+from demande.utils.mae_log import mae_log
 
 
 def calculate_metrics(true_density, estimated_density):

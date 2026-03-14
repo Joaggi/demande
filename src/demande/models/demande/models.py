@@ -4,7 +4,7 @@ Quantum Measurement Classfiication Models
 
 import tensorflow as tf
 from tensorflow.python.keras.engine import data_adapter
-from src.demande.models.demande import layers
+from demande.models.demande import layers
 
 
 
