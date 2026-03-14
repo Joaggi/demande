@@ -33,7 +33,7 @@ Install Miniconda from [here](https://docs.conda.io/en/latest/miniconda.html) an
 ```bash
 conda env create -f environment.yml
 
-conda activate learning-with-density-matrices
+conda activate demande
 ```
 
 Next, install the package:
@@ -72,6 +72,237 @@ After running your experiments, you can launch the ml-flow dashboard by running 
 mlflow ui --port 8080 --backend-store-uri sqlite:///mlflow/tracking.db
 ```
 
+## Dataset
+
+The dataset is publicly available in [Zenodo](https://zenodo.org/records/7822851`)
+
+The dataset contains the features and probabilities of ten different functions.  
+Each dataset is saved using NumPy arrays.
+
+### Arc
+
+The dataset *Arc* corresponds to a two-dimensional random sample drawn from a random vector
+
+$$
+X = (X_1, X_2)
+$$
+
+with probability density function
+
+$$
+f(x_1, x_2) =
+\mathcal{N}(x_2 \mid 0, 4)\;
+\mathcal{N}(x_1 \mid 0.25x_2^2, 1)
+$$
+
+where $\mathcal{N}(u \mid \mu, \sigma^2)$ denotes the density function of a normal distribution with mean $\mu$ and variance $\sigma^2$.
+
+:contentReference[oaicite:0]{index=0} used this dataset to evaluate neural density estimation methods (2017).
+
+---
+
+### Potential 1
+
+The dataset *Potential 1* corresponds to a two-dimensional random sample drawn from a random vector
+
+$$
+X = (X_1, X_2)
+$$
+
+with probability density function
+
+$$
+f(x_1, x_2) =
+\frac{1}{2}\left(\frac{\|x\|-2}{0.4}\right)^2
+-
+\ln\left(
+\exp\left\{-\frac{1}{2}\left[\frac{x_1-2}{0.6}\right]^2\right\}
++
+\exp\left\{-\frac{1}{2}\left[\frac{x_1+2}{0.6}\right]^2\right\}
+\right)
+$$
+
+The normalizing constant is approximately **6.52**, calculated using Monte Carlo integration.
+
+---
+
+### Potential 2
+
+The dataset *Potential 2* corresponds to a two-dimensional random sample drawn from a random vector
+
+$$
+X = (X_1, X_2)
+$$
+
+with probability density function
+
+$$
+f(x_1, x_2) =
+\frac{1}{2}\left[
+\frac{x_2 - w_1(x)}{0.4}
+\right]^2
+$$
+
+where
+
+$$
+w_1(x) = \sin\left(\frac{2\pi x_1}{4}\right)
+$$
+
+The normalizing constant is approximately **8**, calculated using Monte Carlo integration.
+
+---
+
+### Potential 3
+
+The dataset *Potential 3* corresponds to a two-dimensional random sample drawn from a random vector
+
+$$
+X = (X_1, X_2)
+$$
+
+with probability density function
+
+$$
+f(x_1, x_2) =
+-
+\ln\left(
+\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)}{0.35}\right]^2\right\}
++
+\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)+w_2(x)}{0.35}\right]^2\right\}
+\right)
+$$
+
+where
+
+$$
+w_1(x) = \sin\left(\frac{2\pi x_1}{4}\right)
+$$
+
+and
+
+$$
+w_2(x) =
+3 \exp\left\{
+-\frac{1}{2}
+\left[\frac{x_1-1}{0.6}\right]^2
+\right\}
+$$
+
+The normalizing constant is approximately **13.9**, calculated using Monte Carlo integration.
+
+---
+
+### Potential 4
+
+The dataset *Potential 4* corresponds to a two-dimensional random sample drawn from a random vector
+
+$$
+X = (X_1, X_2)
+$$
+
+with probability density function
+
+$$
+f(x_1, x_2) =
+-
+\ln\left(
+\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)}{0.4}\right]^2\right\}
++
+\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)+w_3(x)}{0.35}\right]^2\right\}
+\right)
+$$
+
+where
+
+$$
+w_1(x) = \sin\left(\frac{2\pi x_1}{4}\right)
+$$
+
+$$
+w_3(x) =
+3\,\sigma\left(
+\left[\frac{x_1-1}{0.3}\right]^2
+\right)
+$$
+
+and
+
+$$
+\sigma(x) = \frac{1}{1+\exp(x)}
+$$
+
+The normalizing constant is approximately **13.9**, calculated using Monte Carlo integration.
+
+---
+
+### 2D Mixture
+
+The dataset *2D mixture* corresponds to a two-dimensional random sample drawn from
+
+$$
+X = (X_1, X_2)
+$$
+
+with probability density
+
+$$
+f(x) =
+\frac{1}{2}\mathcal{N}(x \mid \mu_1, \Sigma_1)
++
+\frac{1}{2}\mathcal{N}(x \mid \mu_2, \Sigma_2)
+$$
+
+where
+
+$$
+\mu_1 = [1,-1]^T, \quad
+\mu_2 = [-2,2]^T
+$$
+
+and
+
+$$
+\Sigma_1 =
+\begin{bmatrix}
+1 & 0 \\
+0 & 2
+\end{bmatrix},
+\quad
+\Sigma_2 =
+\begin{bmatrix}
+2 & 0 \\
+0 & 1
+\end{bmatrix}
+$$
+
+---
+
+### 10D Mixture
+
+The dataset *10D-mixture* corresponds to a **10-dimensional** random sample drawn from
+
+$$
+X = (X_1, \ldots, X_{10})
+$$
+
+with a mixture of four diagonal normal probability density functions
+
+$$
+\mathcal{N}(X_i \mid \mu_i, \sigma_i)
+$$
+
+where
+
+- each $\mu_i$ is drawn uniformly from the interval $[-0.5, 0.5]$
+- each $\sigma_i$ is drawn uniformly from the interval $[-0.01, 0.5]$
+
+Each component of the mixture is selected with probability
+
+$$
+\frac{1}{4}
+$$
+
 ---
 
 ## 📁 Repository Structure
@@ -79,6 +310,18 @@ mlflow ui --port 8080 --backend-store-uri sqlite:///mlflow/tracking.db
 ```
 📦 demande
 ├── src/                    # Core implementation
+├── configs/
+├── dataset_utils/
+│   ├── generators/
+│   ├── probability_estimators/
+├── mlflow_utils/
+├── models/
+│   ├── demande/
+│   └── normalizing_flows/
+├── training/
+│   ├── model_building/
+├── utils/
+├── visualizations/
 ├── notebooks/             # Python scripts to run demos
 ├── tests/                  # Unit and integration tests
 ├── data/                   # Example dataset
@@ -86,10 +329,6 @@ mlflow ui --port 8080 --backend-store-uri sqlite:///mlflow/tracking.db
 ├── README.md
 └── LICENSE
 ```
-
----
-
-
 
 ---
 
@@ -119,6 +358,13 @@ If you use this code in your research, please cite:
   author={Gallego-Meji{\'a}, Joseph A. and Gonz{\'a}lez, Fabio A.},
   journal={IEEE Access},
   year={2023}
+}
+
+@article{gallego2023demande,
+  title={Demande dataset},
+  author={Gallego-Mejia, Joseph A and Gonzalez, Fabio A},
+  year={2023},
+  publisher={Zenodo}
 }
 ```
 
