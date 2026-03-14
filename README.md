@@ -8,6 +8,9 @@
 
 Traditional density estimation methods like Kernel Density Estimation (KDE) scale poorly with dimensionality and dataset size. DEMANDE models densities using density matrices combined with adaptive Fourier feature maps, yielding a scalable, data-driven estimator that can be integrated with deep learning tools and evaluated efficiently. ([Semantic Scholar][1])
 
+![Model architecture](https://raw.githubusercontent.com/Joaggi/demande/main/model_architecture.png)
+
+
 ---
 
 ## 🔍 Features
