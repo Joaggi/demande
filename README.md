@@ -162,7 +162,7 @@ $$
 
 with probability density function
 
-$$
+```math
 f(x_1, x_2) =
 -
 \ln(
@@ -170,7 +170,7 @@ f(x_1, x_2) =
 +
 \exp\{-\frac{1}{2}[\frac{x_2-w_1(x)+w_2(x)}{0.35}]^2\}
 )
-$$
+```
 
 where
 
@@ -202,7 +202,7 @@ $$
 
 with probability density function
 
-$$
+```math
 f(x_1, x_2) =
 -
 \ln(
@@ -210,7 +210,7 @@ f(x_1, x_2) =
 +
 \exp\{-\frac{1}{2}[\frac{x_2-w_1(x)+w_3(x)}{0.35}]^2\}
 )
-$$
+```
 
 where
 
