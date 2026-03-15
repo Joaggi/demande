@@ -1,12 +1,15 @@
 # DEMANDE: Density Matrix Neural Density Estimation
 
-**DEMANDE** (**D**ensity **M**atrix **NE**ural **D**ensity **E**stimation) is a neural density estimation method based on **density matrices** and **adaptive Fourier features**. It provides a flexible machine-learning approach to estimate probability density functions from data, grounded in the mathematical formalism of density matrices commonly used in quantum mechanics. ([Semantic Scholar][1])
+**DEMANDE** (**D**ensity **M**atrix **NE**ural **D**ensity **E**stimation) is a neural density estimation method based on **density matrices** and **adaptive Fourier features**. It provides a flexible machine-learning approach to estimate probability density functions from data, grounded in the mathematical formalism of density matrices commonly used in quantum mechanics. ([IEEE](https://ieeexplore.ieee.org/abstract/document/10131950))
 
 ---
 
 ## 📌 Overview
 
-Traditional density estimation methods like Kernel Density Estimation (KDE) scale poorly with dimensionality and dataset size. DEMANDE models densities using density matrices combined with adaptive Fourier feature maps, yielding a scalable, data-driven estimator that can be integrated with deep learning tools and evaluated efficiently. ([Semantic Scholar][1])
+Traditional density estimation methods like Kernel Density Estimation (KDE) scale poorly with dimensionality and dataset size. DEMANDE models densities using density matrices combined with adaptive Fourier feature maps, yielding a scalable, data-driven estimator that can be integrated with deep learning tools and evaluated efficiently. ([IEEE](https://ieeexplore.ieee.org/abstract/document/10131950))
+
+![Model architecture](https://raw.githubusercontent.com/Joaggi/demande/main/model_architecture.png)
+
 
 ---
 
@@ -28,7 +31,7 @@ Traditional density estimation methods like Kernel Density Estimation (KDE) scal
 
 ## Installation
 
-Install Miniconda from [here](https://docs.conda.io/en/latest/miniconda.html) and then run the following commands to create the `learning_with_density_matrices` environment:
+Install Miniconda from [here](https://docs.conda.io/en/latest/miniconda.html) and then run the following commands to create the `demande` environment:
 
 ```bash
 conda env create -f environment.yml
@@ -47,11 +50,6 @@ or if you want development dependencies as well:
 ```bash
 pip install -e .[dev]
 ```
-
-
-## Gitsubmodules update
-
-This repository rely on some gitsubmodules. To update them run:
 
 
 # Create Directories
@@ -111,16 +109,17 @@ $$
 
 with probability density function
 
-$$
+
+```math
 f(x_1, x_2) =
 \frac{1}{2}\left(\frac{\|x\|-2}{0.4}\right)^2
 -
 \ln\left(
-\exp\left\{-\frac{1}{2}\left[\frac{x_1-2}{0.6}\right]^2\right\}
+\exp\left\{-\frac{1}{2}\left(\frac{x_1-2}{0.6}\right)^2\right\}
 +
-\exp\left\{-\frac{1}{2}\left[\frac{x_1+2}{0.6}\right]^2\right\}
+\exp\left\{-\frac{1}{2}\left(\frac{x_1+2}{0.6}\right)^2\right\}
 \right)
-$$
+```
 
 The normalizing constant is approximately **6.52**, calculated using Monte Carlo integration.
 
@@ -138,15 +137,15 @@ with probability density function
 
 $$
 f(x_1, x_2) =
-\frac{1}{2}\left[
+\frac{1}{2}[
 \frac{x_2 - w_1(x)}{0.4}
-\right]^2
+]^2
 $$
 
 where
 
 $$
-w_1(x) = \sin\left(\frac{2\pi x_1}{4}\right)
+w_1(x) = \sin(\frac{2\pi x_1}{4})
 $$
 
 The normalizing constant is approximately **8**, calculated using Monte Carlo integration.
@@ -163,30 +162,30 @@ $$
 
 with probability density function
 
-$$
+```math
 f(x_1, x_2) =
 -
-\ln\left(
-\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)}{0.35}\right]^2\right\}
+\ln(
+\exp\{-\frac{1}{2}[\frac{x_2-w_1(x)}{0.35}]^2\}
 +
-\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)+w_2(x)}{0.35}\right]^2\right\}
-\right)
-$$
+\exp\{-\frac{1}{2}[\frac{x_2-w_1(x)+w_2(x)}{0.35}]^2\}
+)
+```
 
 where
 
 $$
-w_1(x) = \sin\left(\frac{2\pi x_1}{4}\right)
+w_1(x) = \sin(\frac{2\pi x_1}{4})
 $$
 
 and
 
 $$
 w_2(x) =
-3 \exp\left\{
+3 \exp\{
 -\frac{1}{2}
-\left[\frac{x_1-1}{0.6}\right]^2
-\right\}
+[\frac{x_1-1}{0.6}]^2
+\}
 $$
 
 The normalizing constant is approximately **13.9**, calculated using Monte Carlo integration.
@@ -203,27 +202,27 @@ $$
 
 with probability density function
 
-$$
+```math
 f(x_1, x_2) =
 -
-\ln\left(
-\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)}{0.4}\right]^2\right\}
+\ln(
+\exp\{-\frac{1}{2}[\frac{x_2-w_1(x)}{0.4}]^2\}
 +
-\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)+w_3(x)}{0.35}\right]^2\right\}
-\right)
-$$
+\exp\{-\frac{1}{2}[\frac{x_2-w_1(x)+w_3(x)}{0.35}]^2\}
+)
+```
 
 where
 
 $$
-w_1(x) = \sin\left(\frac{2\pi x_1}{4}\right)
+w_1(x) = \sin(\frac{2\pi x_1}{4})
 $$
 
 $$
 w_3(x) =
-3\,\sigma\left(
-\left[\frac{x_1-1}{0.3}\right]^2
-\right)
+3\,\sigma(
+[\frac{x_1-1}{0.3}]^2
+)
 $$
 
 and
@@ -310,22 +309,23 @@ $$
 ```
 📦 demande
 ├── src/                    # Core implementation
-├── configs/
-├── dataset_utils/
-│   ├── generators/
-│   ├── probability_estimators/
-├── mlflow_utils/
-├── models/
-│   ├── demande/
-│   └── normalizing_flows/
-├── training/
-│   ├── model_building/
-├── utils/
-├── visualizations/
+├──── configs/
+├──── dataset_utils/
+│     ├── generators/
+│     ├── probability_estimators/
+├──── mlflow_utils/
+├──── models/
+│     ├── demande/
+│     └── normalizing_flows/
+├──── training/
+│     ├── model_building/
+├──── utils/
+├──── visualizations/
 ├── notebooks/             # Python scripts to run demos
 ├── tests/                  # Unit and integration tests
 ├── data/                   # Example dataset
 ├── pyproject.toml
+├── environment.yaml
 ├── README.md
 └── LICENSE
 ```
@@ -344,13 +344,13 @@ pytest tests/
 
 ## 📚 Related Work
 
-DEMANDE builds on the idea of density matrices as probability density estimators, with roots in kernel and random Fourier feature methods. ([Semantic Scholar][1])
+DEMANDE builds on the idea of density matrices as probability density estimators, with roots in kernel and random Fourier feature methods. ([Fast Kernel Density Estimation][https://link.springer.com/chapter/10.1007/978-3-031-22419-5_14])
 
 ---
 
 ## 📄 Citation
 
-If you use this code in your research, please cite:
+If you use the ideas of this code in your research, please cite:
 
 ```
 @article{gallego2023demande,
@@ -359,18 +359,17 @@ If you use this code in your research, please cite:
   journal={IEEE Access},
   year={2023}
 }
+```
+If you use this code in your research, please cite:
 
-@article{gallego2023demande,
+```
+@article{gallego2023demandedataset,
   title={Demande dataset},
   author={Gallego-Mejia, Joseph A and Gonzalez, Fabio A},
   year={2023},
   publisher={Zenodo}
 }
 ```
-
-(This is a placeholder citation — adjust to the official published version and BibTeX entry.) ([ResearchGate][4])
-
----
 
 ## 🧑‍🔬 Contributing
 
@@ -388,10 +387,6 @@ Contributions are welcome! Please open issues for bugs, feature requests, or imp
 This project is licensed under the MIT License.
 
 ---
+## Related Work
 
-If you want, I can also generate badges (e.g., build status, PyPI, citations) or add **installation via pip/Conda** and **API reference** sections to the README.
-
-[1]: https://www.semanticscholar.org/paper/DEMANDE%3A-Density-Matrix-Neural-Density-Estimation-Gallego-Mejia-Gonz%C3%A1lez/1a08e8c5607646eab2d1cc8590171cfe0b6dcf6f?utm_source=chatgpt.com "[PDF] DEMANDE: Density Matrix Neural Density Estimation"
-[2]: https://paperswithcode.com/paper/fast-kernel-density-estimation-with-density?utm_source=chatgpt.com "Fast Kernel Density Estimation with Density Matrices and Random Fourier Features | Papers With Code"
-[3]: https://link.springer.com/article/10.1007/s42484-022-00079-9?utm_source=chatgpt.com "Learning with density matrices and random features | Quantum Machine Intelligence | Springer Nature Link"
-[4]: https://www.researchgate.net/publication/371001879_DEMANDE_Density_Matrix_Neural_Density_Estimation?utm_source=chatgpt.com "(PDF) DEMANDE: Density Matrix Neural Density Estimation"
+[1]: Gallego-Mejia, J. A., & González, F. A. (2023). Demande: Density matrix neural density estimation. IEEE access, 11, 53062-53078.
