@@ -13,7 +13,7 @@ def iterate_dmkde_sgd(model, max_epochs, batched_train_data, train_set, test_set
     if setting["z_initialize_with_rho"]:
         setting_dmkde = setting
         setting_dmkde["z_algorithm"] = "dmkde"
-        dmkde = generate_model_dmkde(setting_dmkde)
+        dmkde = generate_model_dmkde(setting_dmkde["z_sigma"], setting_dmkde["z_dimension"], setting_dmkde["z_dim_rff"], setting_dmkde["random_state"])
         iterate_dmkde(dmkde, 1, batched_train_data, train_set, test_set, opt, checkpoint, checkpoint_path, algorithm, mlflow, setting)
         if setting["z_adaptive"]:
             eig_vals = model.set_rho(dmkde.weights[0])

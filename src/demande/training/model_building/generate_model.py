@@ -5,6 +5,7 @@ from demande.training.model_building.generate_model_neural_splines import genera
 from demande.training.model_building.generate_model_dmkde import generate_model_dmkde
 from demande.training.model_building.generate_model_dmkde_sgd import generate_model_dmkde_sgd
 
+from demande.configs.dmkde_sgd_config import DmkdeSgdOptimizerConfig, DmkdeSgdParameterConfig
 
 def generate_model(setting):
     if setting["z_algorithm"] == "made":
@@ -23,7 +24,15 @@ def generate_model(setting):
         return generate_model_dmkde(setting)
         
     if setting["z_algorithm"] == "dmkde_sgd":
-        return generate_model_dmkde_sgd(setting)
+        dmkde_sgd_parameters = DmkdeSgdParameterConfig( input_dimension=setting["z_dimension"], sigma=setting["z_sigma"],
+                                    eig_dim=setting["z_dim_eig"], rff_dim=setting["z_dim_rff"],
+                                    random_state=setting["z_random_state"], layer_0_trainable=setting["z_trainable_layers_0"],
+                                                        layer_1_trainable=setting["z_trainable_layers_0"])
+        optimizer = DmkdeSgdOptimizerConfig(base_lr=setting["z_base_lr"], decay_steps=setting["z_decay_steps"],
+                                            end_lr=setting["z_end_lr"], power=setting["z_power"])
+
+
+        return generate_model_dmkde_sgd(dmkde_sgd_parameters, optimizer)
 
 
 

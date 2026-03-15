@@ -8,10 +8,11 @@ import numpy as np
 import demande.models.demande.layers as layers
 import demande.models.demande.models as models
 
+from demande.configs.dmkde_sgd_config import DmkdeSgdOptimizerConfig, DmkdeSgdParameterConfig
 
 
 
-def generate_model_dmkde_sgd(setting):
+def generate_model_dmkde_sgd(dmkde_sgd_parameters: DmkdeSgdParameterConfig, optimizer: DmkdeSgdOptimizerConfig):
 
 #optimizer
 #base_lr, decay_steps, end_lr, power, 
@@ -19,19 +20,18 @@ def generate_model_dmkde_sgd(setting):
 #models
 #        sigma, eig_dim, rff_dim, input_dimension, random_state, layer_0_trainable, layer_1_trainable
 
-    sigma = setting["z_sigma"]
-    gamma= 1/ (2*sigma**2)
+    gamma= 1/ (2 * dmkde_sgd_parameters.sigma ** 2)
     
-    polinomial_decay = tf.keras.optimizers.schedules.PolynomialDecay(setting["z_base_lr"], \
-            setting["z_decay_steps"], setting["z_end_lr"], power=setting["z_power"])
-    optimizer = tf.keras.optimizers.Adam(learning_rate=polinomial_decay)  # optimizer
+    polynomial_decay = tf.keras.optimizers.schedules.PolynomialDecay(optimizer.base_lr, \
+            optimizer.decay_steps, optimizer.end_lr, power=optimizer.power)
+    optimizer = tf.keras.optimizers.Adam(learning_rate=polynomial_decay)  # optimizer
 
-    num_eig = int(setting["z_dim_eig"] * setting["z_dim_rff"])
+    num_eig = int(dmkde_sgd_parameters.eig_dim * dmkde_sgd_parameters.rff_dim)
 
-    dmkde_trainable_sgd = models.QMDensitySGD(setting["z_dimension"],  setting["z_dim_rff"], num_eig=num_eig,\
-                    gamma=gamma, random_state=setting["z_random_state"])
-    dmkde_trainable_sgd.layers[0].trainable = setting["z_trainable_layers_0"]
-    dmkde_trainable_sgd.layers[1].trainable = setting["z_trainable_layers_1"]
+    dmkde_trainable_sgd = models.QMDensitySGD(dmkde_sgd_parameters.input_dimension, dmkde_sgd_parameters.rff_dim, num_eig=num_eig, \
+                                              gamma=gamma, random_state=dmkde_sgd_parameters.random_state)
+    dmkde_trainable_sgd.layers[0].trainable = dmkde_sgd_parameters.layer_0_trainable
+    dmkde_trainable_sgd.layers[1].trainable = dmkde_sgd_parameters.layer_1_trainable
     dmkde_trainable_sgd.compile(optimizer)
 
     return dmkde_trainable_sgd
