@@ -113,7 +113,7 @@ $$
 f(x_1, x_2) =
 \frac{1}{2}(\frac{\|x\|-2}{0.4})^2
 -
-\ln\left(
+\ln(
 \exp\{-\frac{1}{2}[\frac{x_1-2}{0.6}]^2\}
 +
 \exp\{-\frac{1}{2}[\frac{x_1+2}{0.6}t]^2\}
@@ -183,8 +183,8 @@ $$
 w_2(x) =
 3 \exp\{
 -\frac{1}{2}
-\left[\frac{x_1-1}{0.6}]^2
-\right\}
+[\frac{x_1-1}{0.6}]^2
+\}
 $$
 
 The normalizing constant is approximately **13.9**, calculated using Monte Carlo integration.
@@ -205,7 +205,7 @@ $$
 f(x_1, x_2) =
 -
 \ln(
-\exp\{-\frac{1}{2}[\frac{x_2-w_1(x)}{0.4}\right]^2\}
+\exp\{-\frac{1}{2}[\frac{x_2-w_1(x)}{0.4}]^2\}
 +
 \exp\{-\frac{1}{2}[\frac{x_2-w_1(x)+w_3(x)}{0.35}]^2\}
 )
@@ -220,7 +220,7 @@ $$
 $$
 w_3(x) =
 3\,\sigma(
-\left[\frac{x_1-1}{0.3}]^2
+[\frac{x_1-1}{0.3}]^2
 )
 $$
 
