@@ -1,12 +1,12 @@
 # DEMANDE: Density Matrix Neural Density Estimation
 
-**DEMANDE** (**D**ensity **M**atrix **NE**ural **D**ensity **E**stimation) is a neural density estimation method based on **density matrices** and **adaptive Fourier features**. It provides a flexible machine-learning approach to estimate probability density functions from data, grounded in the mathematical formalism of density matrices commonly used in quantum mechanics. ([IEEE][1])
+**DEMANDE** (**D**ensity **M**atrix **NE**ural **D**ensity **E**stimation) is a neural density estimation method based on **density matrices** and **adaptive Fourier features**. It provides a flexible machine-learning approach to estimate probability density functions from data, grounded in the mathematical formalism of density matrices commonly used in quantum mechanics. ([IEEE](https://ieeexplore.ieee.org/abstract/document/10131950))
 
 ---
 
 ## 📌 Overview
 
-Traditional density estimation methods like Kernel Density Estimation (KDE) scale poorly with dimensionality and dataset size. DEMANDE models densities using density matrices combined with adaptive Fourier feature maps, yielding a scalable, data-driven estimator that can be integrated with deep learning tools and evaluated efficiently. ([IEEE][1])
+Traditional density estimation methods like Kernel Density Estimation (KDE) scale poorly with dimensionality and dataset size. DEMANDE models densities using density matrices combined with adaptive Fourier feature maps, yielding a scalable, data-driven estimator that can be integrated with deep learning tools and evaluated efficiently. ([IEEE](https://ieeexplore.ieee.org/abstract/document/10131950))
 
 ![Model architecture](https://raw.githubusercontent.com/Joaggi/demande/main/model_architecture.png)
 
