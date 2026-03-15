@@ -116,13 +116,13 @@ with probability density function
 
 $$
 f(x_1, x_2) =
-\frac{1}{2}\left(\frac{\|x\|-2}{0.4}\right)^2
+\frac{1}{2}(\frac{\|x\|-2}{0.4})^2
 -
 \ln\left(
-\exp\left\{-\frac{1}{2}\left[\frac{x_1-2}{0.6}\right]^2\right\}
+\exp\{-\frac{1}{2}[\frac{x_1-2}{0.6}]^2\}
 +
-\exp\left\{-\frac{1}{2}\left[\frac{x_1+2}{0.6}\right]^2\right\}
-\right)
+\exp\{-\frac{1}{2}[\frac{x_1+2}{0.6}t]^2\}
+)
 $$
 
 The normalizing constant is approximately **6.52**, calculated using Monte Carlo integration.
@@ -141,15 +141,15 @@ with probability density function
 
 $$
 f(x_1, x_2) =
-\frac{1}{2}\left[
+\frac{1}{2}[
 \frac{x_2 - w_1(x)}{0.4}
-\right]^2
+]^2
 $$
 
 where
 
 $$
-w_1(x) = \sin\left(\frac{2\pi x_1}{4}\right)
+w_1(x) = \sin(\frac{2\pi x_1}{4})
 $$
 
 The normalizing constant is approximately **8**, calculated using Monte Carlo integration.
@@ -169,26 +169,26 @@ with probability density function
 $$
 f(x_1, x_2) =
 -
-\ln\left(
-\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)}{0.35}\right]^2\right\}
+\ln(
+\exp\{-\frac{1}{2}[\frac{x_2-w_1(x)}{0.35}]^2\}
 +
-\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)+w_2(x)}{0.35}\right]^2\right\}
-\right)
+\exp\{-\frac{1}{2}[\frac{x_2-w_1(x)+w_2(x)}{0.35}]^2\}
+)
 $$
 
 where
 
 $$
-w_1(x) = \sin\left(\frac{2\pi x_1}{4}\right)
+w_1(x) = \sin(\frac{2\pi x_1}{4})
 $$
 
 and
 
 $$
 w_2(x) =
-3 \exp\left\{
+3 \exp\{
 -\frac{1}{2}
-\left[\frac{x_1-1}{0.6}\right]^2
+\left[\frac{x_1-1}{0.6}]^2
 \right\}
 $$
 
@@ -209,24 +209,24 @@ with probability density function
 $$
 f(x_1, x_2) =
 -
-\ln\left(
-\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)}{0.4}\right]^2\right\}
+\ln(
+\exp\{-\frac{1}{2}[\frac{x_2-w_1(x)}{0.4}\right]^2\}
 +
-\exp\left\{-\frac{1}{2}\left[\frac{x_2-w_1(x)+w_3(x)}{0.35}\right]^2\right\}
-\right)
+\exp\{-\frac{1}{2}[\frac{x_2-w_1(x)+w_3(x)}{0.35}]^2\}
+)
 $$
 
 where
 
 $$
-w_1(x) = \sin\left(\frac{2\pi x_1}{4}\right)
+w_1(x) = \sin(\frac{2\pi x_1}{4})
 $$
 
 $$
 w_3(x) =
-3\,\sigma\left(
-\left[\frac{x_1-1}{0.3}\right]^2
-\right)
+3\,\sigma(
+\left[\frac{x_1-1}{0.3}]^2
+)
 $$
 
 and
@@ -313,22 +313,23 @@ $$
 ```
 📦 demande
 ├── src/                    # Core implementation
-├── configs/
-├── dataset_utils/
-│   ├── generators/
-│   ├── probability_estimators/
-├── mlflow_utils/
-├── models/
-│   ├── demande/
-│   └── normalizing_flows/
-├── training/
-│   ├── model_building/
-├── utils/
-├── visualizations/
+├──── configs/
+├──── dataset_utils/
+│     ├── generators/
+│     ├── probability_estimators/
+├──── mlflow_utils/
+├──── models/
+│     ├── demande/
+│     └── normalizing_flows/
+├──── training/
+│     ├── model_building/
+├──── utils/
+├──── visualizations/
 ├── notebooks/             # Python scripts to run demos
 ├── tests/                  # Unit and integration tests
 ├── data/                   # Example dataset
 ├── pyproject.toml
+├── environment.yaml
 ├── README.md
 └── LICENSE
 ```
@@ -390,7 +391,6 @@ Contributions are welcome! Please open issues for bugs, feature requests, or imp
 This project is licensed under the MIT License.
 
 ---
-
-If you want, I can also generate badges (e.g., build status, PyPI, citations) or add **installation via pip/Conda** and **API reference** sections to the README.
+## Related Work
 
 [1]: Gallego-Mejia, J. A., & González, F. A. (2023). Demande: Density matrix neural density estimation. IEEE access, 11, 53062-53078.
