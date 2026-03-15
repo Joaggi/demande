@@ -109,7 +109,8 @@ $$
 
 with probability density function
 
-$$
+
+```math
 f(x_1, x_2) =
 \frac{1}{2}\left(\frac{\|x\|-2}{0.4}\right)^2
 -
@@ -118,7 +119,7 @@ f(x_1, x_2) =
 +
 \exp\left\{-\frac{1}{2}\left(\frac{x_1+2}{0.6}\right)^2\right\}
 \right)
-$$
+```
 
 The normalizing constant is approximately **6.52**, calculated using Monte Carlo integration.
 
