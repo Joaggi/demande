@@ -4,7 +4,7 @@ try:
 except:
     from experiments.initialization import initialization
 
-parent_path = initialization("demande", "/Doctorado/" )
+parent_path = initialization("demande", "../" )
 from mlflow_get_experiment import mlflow_get_experiment 
 from generate_model import  generate_model
 from convert_best_hyperparameter_search_settings import convert_best_hyperparameter_search_settings

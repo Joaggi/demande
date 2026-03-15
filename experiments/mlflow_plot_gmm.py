@@ -4,7 +4,7 @@ try:
 except:
     from experiments.initialization import initialization
 
-parent_path = initialization("demande", "/Doctorado/")
+parent_path = initialization("demande", "../")
 from experiment import experiment
 
 
