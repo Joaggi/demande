@@ -1,12 +1,12 @@
 # DEMANDE: Density Matrix Neural Density Estimation
 
-**DEMANDE** (**D**ensity **M**atrix **NE**ural **D**ensity **E**stimation) is a neural density estimation method based on **density matrices** and **adaptive Fourier features**. It provides a flexible machine-learning approach to estimate probability density functions from data, grounded in the mathematical formalism of density matrices commonly used in quantum mechanics. ([Semantic Scholar][1])
+**DEMANDE** (**D**ensity **M**atrix **NE**ural **D**ensity **E**stimation) is a neural density estimation method based on **density matrices** and **adaptive Fourier features**. It provides a flexible machine-learning approach to estimate probability density functions from data, grounded in the mathematical formalism of density matrices commonly used in quantum mechanics. ([IEEE][1])
 
 ---
 
 ## 📌 Overview
 
-Traditional density estimation methods like Kernel Density Estimation (KDE) scale poorly with dimensionality and dataset size. DEMANDE models densities using density matrices combined with adaptive Fourier feature maps, yielding a scalable, data-driven estimator that can be integrated with deep learning tools and evaluated efficiently. ([Semantic Scholar][1])
+Traditional density estimation methods like Kernel Density Estimation (KDE) scale poorly with dimensionality and dataset size. DEMANDE models densities using density matrices combined with adaptive Fourier feature maps, yielding a scalable, data-driven estimator that can be integrated with deep learning tools and evaluated efficiently. ([IEEE][1])
 
 ![Model architecture](https://raw.githubusercontent.com/Joaggi/demande/main/model_architecture.png)
 
@@ -353,7 +353,7 @@ DEMANDE builds on the idea of density matrices as probability density estimators
 
 ## 📄 Citation
 
-If you use this code in your research, please cite:
+If you use the ideas of this code in your research, please cite:
 
 ```
 @article{gallego2023demande,
@@ -362,18 +362,17 @@ If you use this code in your research, please cite:
   journal={IEEE Access},
   year={2023}
 }
+```
+If you use this code in your research, please cite:
 
-@article{gallego2023demande,
+```
+@article{gallego2023demandedataset,
   title={Demande dataset},
   author={Gallego-Mejia, Joseph A and Gonzalez, Fabio A},
   year={2023},
   publisher={Zenodo}
 }
 ```
-
-(This is a placeholder citation — adjust to the official published version and BibTeX entry.) ([ResearchGate][4])
-
----
 
 ## 🧑‍🔬 Contributing
 
@@ -394,7 +393,4 @@ This project is licensed under the MIT License.
 
 If you want, I can also generate badges (e.g., build status, PyPI, citations) or add **installation via pip/Conda** and **API reference** sections to the README.
 
-[1]: https://www.semanticscholar.org/paper/DEMANDE%3A-Density-Matrix-Neural-Density-Estimation-Gallego-Mejia-Gonz%C3%A1lez/1a08e8c5607646eab2d1cc8590171cfe0b6dcf6f?utm_source=chatgpt.com "[PDF] DEMANDE: Density Matrix Neural Density Estimation"
-[2]: https://paperswithcode.com/paper/fast-kernel-density-estimation-with-density?utm_source=chatgpt.com "Fast Kernel Density Estimation with Density Matrices and Random Fourier Features | Papers With Code"
-[3]: https://link.springer.com/article/10.1007/s42484-022-00079-9?utm_source=chatgpt.com "Learning with density matrices and random features | Quantum Machine Intelligence | Springer Nature Link"
-[4]: https://www.researchgate.net/publication/371001879_DEMANDE_Density_Matrix_Neural_Density_Estimation?utm_source=chatgpt.com "(PDF) DEMANDE: Density Matrix Neural Density Estimation"
+[1]: Gallego-Mejia, J. A., & González, F. A. (2023). Demande: Density matrix neural density estimation. IEEE access, 11, 53062-53078.
