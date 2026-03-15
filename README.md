@@ -31,7 +31,7 @@ Traditional density estimation methods like Kernel Density Estimation (KDE) scal
 
 ## Installation
 
-Install Miniconda from [here](https://docs.conda.io/en/latest/miniconda.html) and then run the following commands to create the `learning_with_density_matrices` environment:
+Install Miniconda from [here](https://docs.conda.io/en/latest/miniconda.html) and then run the following commands to create the `demande` environment:
 
 ```bash
 conda env create -f environment.yml
