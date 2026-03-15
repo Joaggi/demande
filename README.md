@@ -52,11 +52,6 @@ pip install -e .[dev]
 ```
 
 
-## Gitsubmodules update
-
-This repository rely on some gitsubmodules. To update them run:
-
-
 # Create Directories
 
 - `mkdir reports mlflow data` 
@@ -348,7 +343,7 @@ pytest tests/
 
 ## 📚 Related Work
 
-DEMANDE builds on the idea of density matrices as probability density estimators, with roots in kernel and random Fourier feature methods. ([Semantic Scholar][1])
+DEMANDE builds on the idea of density matrices as probability density estimators, with roots in kernel and random Fourier feature methods. ([Fast Kernel Density Estimation][https://link.springer.com/chapter/10.1007/978-3-031-22419-5_14])
 
 ---
 
