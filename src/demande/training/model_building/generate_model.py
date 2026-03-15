@@ -21,7 +21,7 @@ def generate_model(setting):
         return generate_model_neural_splines(setting)
 
     if setting["z_algorithm"] == "dmkde":
-        return generate_model_dmkde(setting)
+        return generate_model_dmkde(setting["z_sigma"], setting["z_dimension"], setting["z_dim_rff"], setting["z_random_state"])
         
     if setting["z_algorithm"] == "dmkde_sgd":
         dmkde_sgd_parameters = DmkdeSgdParameterConfig( input_dimension=setting["z_dimension"], sigma=setting["z_sigma"],

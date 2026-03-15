@@ -19,7 +19,8 @@ for j in range(2, 11):
   
     setting = {
         "z_max_epochs": int(1),
-        "z_dimension": j
+        "z_dimension": j,
+        "z_adaptive": False
     }
 
     prod_settings = {

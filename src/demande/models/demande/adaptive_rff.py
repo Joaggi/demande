@@ -6,6 +6,7 @@ import demande.models.demande.models as models
 import numpy as np
 from sklearn.model_selection import train_test_split
 
+from demande.configs.adaptive_rff_config import AdaptiveRffParameterConfig
 
 class QFeatureMapAdaptRFF(layers.QFeatureMapRFF):
     def __init__(
@@ -98,12 +99,13 @@ def build_features(X):
 
     return x_train_rff, x_test_rff
 
-def build_model(setting, x_train_rff, x_test_rff):
-    n_rffs = setting["z_dim_rff"]
-    sigma = setting["z_sigma"]
+def build_model(adaptive_rff_parameter: AdaptiveRffParameterConfig,
+                x_train_rff, x_test_rff):
+    n_rffs = adaptive_rff_parameter.rff_dim
+    sigma = adaptive_rff_parameter.sigma
     gamma= 1/ (2*sigma**2)
 
-    dimension=setting["z_dimension"]
+    dimension=adaptive_rff_parameter.input_dimension
 
     print(f'Gamma: {gamma}')
     y_train_rff = gauss_kernel_arr(x_train_rff[:, 0, ...], x_train_rff[:, 1, ...], gamma=gamma)
@@ -112,20 +114,20 @@ def build_model(setting, x_train_rff, x_test_rff):
     dm_rbf = calc_rbf(dmrff, x_test_rff[:, 0, ...], x_test_rff[:, 1, ...])
     pl.plot(y_test_rff, dm_rbf, '.')
 
-    opt = tf.keras.optimizers.Adam(learning_rate=setting["z_adaptive_learning_rate"])
+    opt = tf.keras.optimizers.Adam(learning_rate=adaptive_rff_parameter.learning_rate)
 
     dmrff.compile(optimizer=opt, loss='mse')
-    dmrff.evaluate(x_test_rff, y_test_rff, batch_size=setting["z_adaptive_batch_size"])
+    dmrff.evaluate(x_test_rff, y_test_rff, batch_size=adaptive_rff_parameter.batch_size)
 
-    dmrff.fit(x_train_rff, y_train_rff, validation_split=0.1, epochs=setting["z_adaptive_epochs"], batch_size=256)
+    dmrff.fit(x_train_rff, y_train_rff, validation_split=0.1, epochs=adaptive_rff_parameter.epochs, batch_size=256)
 
     dm_rbf = calc_rbf(dmrff, x_test_rff[:, 0, ...], x_test_rff[:, 1, ...])
     pl.plot(y_test_rff, dm_rbf, '.')
-    dmrff.evaluate(x_test_rff, y_test_rff, batch_size=setting["z_adaptive_batch_size"])
+    dmrff.evaluate(x_test_rff, y_test_rff, adaptive_rff_parameter.batch_size)
 
     return dmrff.rff_layer
 
-def fit_transform(setting, X):
+def fit_transform(X, adaptive_rff_parameter: AdaptiveRffParameterConfig):
     x_train_rff, x_test_rff = build_features(X)
 
-    return build_model(setting, x_train_rff, x_test_rff)
+    return build_model(adaptive_rff_parameter,  x_train_rff, x_test_rff)

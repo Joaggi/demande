@@ -10,6 +10,8 @@ class DmkdeSgdOptimizerConfig:
 @dataclass
 class DmkdeSgdParameterConfig:
     input_dimension: float
+    adaptive_activated: bool = True
+    initialize_with_rho: bool = True
     sigma: float = 0.5
     eig_dim: int = 1
     rff_dim: float = 500
